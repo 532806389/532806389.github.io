@@ -251,20 +251,20 @@
             <span class="post-date" title="2019-09-30 17:13:20">2019/09/30</span>
         </a>
         
-        <a  class=""
-           href="/2019/09/30/协方差-协方差矩阵/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="协方差/协方差矩阵">协方差/协方差矩阵</span>
-            <span class="post-date" title="2019-09-30 17:50:39">2019/09/30</span>
-        </a>
-        
         <a  class="数学基础 "
            href="/2019/09/30/奇异值分解/"
            data-tag="SVD"
            data-author="" >
             <span class="post-title" title="奇异值分解">奇异值分解</span>
             <span class="post-date" title="2019-09-30 17:52:08">2019/09/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/30/协方差-协方差矩阵/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="协方差/协方差矩阵">协方差/协方差矩阵</span>
+            <span class="post-date" title="2019-09-30 17:50:39">2019/09/30</span>
         </a>
         
         <a  class=""
@@ -299,14 +299,6 @@
             <span class="post-date" title="2019-09-30 16:57:03">2019/09/30</span>
         </a>
         
-        <a  class="统计学习方法 "
-           href="/2019/09/30/条件随机场/"
-           data-tag="统计学习方法,机器学习"
-           data-author="" >
-            <span class="post-title" title="条件随机场">条件随机场</span>
-            <span class="post-date" title="2019-09-30 17:15:57">2019/09/30</span>
-        </a>
-        
         <a  class="数学基础 "
            href="/2019/09/30/熵/"
            data-tag="信息论,熵"
@@ -315,12 +307,12 @@
             <span class="post-date" title="2019-09-30 16:48:02">2019/09/30</span>
         </a>
         
-        <a  class=""
-           href="/2019/09/30/牛顿-拟牛顿法/"
-           data-tag=""
+        <a  class="统计学习方法 "
+           href="/2019/09/30/条件随机场/"
+           data-tag="统计学习方法,机器学习"
            data-author="" >
-            <span class="post-title" title="牛顿/拟牛顿法">牛顿/拟牛顿法</span>
-            <span class="post-date" title="2019-09-30 17:51:25">2019/09/30</span>
+            <span class="post-title" title="条件随机场">条件随机场</span>
+            <span class="post-date" title="2019-09-30 17:15:57">2019/09/30</span>
         </a>
         
         <a  class=""
@@ -329,6 +321,14 @@
            data-author="" >
             <span class="post-title" title="梯度下降法">梯度下降法</span>
             <span class="post-date" title="2019-09-30 17:50:55">2019/09/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/30/牛顿-拟牛顿法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="牛顿/拟牛顿法">牛顿/拟牛顿法</span>
+            <span class="post-date" title="2019-09-30 17:51:25">2019/09/30</span>
         </a>
         
         <a  class="统计学习方法 "
@@ -393,7 +393,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-20 13:57:12'>2019-09-30 16:48</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-20 14:48:47'>2019-09-30 16:48</time>
         
     </div>
     <div class="article-meta">
@@ -432,7 +432,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h1><p>​    信息熵这一概念是香农在1948年提出的，它解决了信息的度量问题。一条信息中所含有的信息量跟它的不确定性有着直接的关系，概率越小的事情发生了则信息量就越大，比如说：“国足世界杯没有出线”和“国足拿了世界杯冠军”这两句话，很明显后者的前者发生的概率要远小于后者，所以后者的信息量是更大的。</p>
-<p><strong>信息量</strong>：<br>$$<br>-log(p(x))<br>$$<br><strong>熵</strong>：<br>$$<br>H(X) = -\sum P(x)log(P()x)<br>$$<br>熵表示的是一件事情的不确定性程度。变量的不确定性越大，熵也就越大，如果需要将它搞清楚也就需要更大的信息量。</p>
+<p><strong>信息量</strong>：<br>$$<br>-log(p(x))<br>$$<br><strong>信息熵</strong>：<br>$$<br>H(X) = -\sum P(x)log(P()x)<br>$$<br>信息熵的物理含义表示的是一个系统的不确定性程度。不确定性越大，熵也就越大，如果需要将它搞清楚也就需要更大的信息量。</p>
+<p><strong>条件熵</strong></p>
+<p><strong>相对熵(KL散度)</strong>：</p>
+<p>相对熵是用来衡量两个取值为正的函数之间的相关性的：<br>$$<br>KL(f(x)||g(x))=\sum_{x\in X}f(x)*log \frac{f(x)}{g(x)}<br>$$</p>
+<ol>
+<li><p>对于两个完全相同的函数，他们的相对熵等于0</p>
+</li>
+<li><p>两个函数的差异越大则这两个函数的相对熵就越大，反之差异越小则相对熵就越小</p>
+</li>
+<li><p>对于概率分布或者概率密度函数如果取值均大于0，则相对熵则可以衡量两个分布之间的差异性。</p>
+<p>相对熵可以应用于衡量两个常用词在不同文本中的概率分布看他们是否是同义词</p>
+</li>
+</ol>
+<p>   <strong>交叉熵</strong></p>
+<p>   对上面的相对熵进行变形可得：<br>   $$<br>   KL(f(x)||g(x))=\sum_{x\in X}f(x)<em>logf(x)-\sum_{x\in X}f(x)</em>logg(x)\=H(f(x))-\sum_{x\in X}f(x)<em>logg(x)<br>   $$<br>   其中交叉熵：<br>   $$<br>   -\sum_{x\in X}f(x)</em>logg(x)<br>   $$<br>   对于某个数据集其内部变量分布概率f(x)是固定的，所以H(f(x))为常数。因此当将模型中的概率分布g(x)逼近其真实分布f(x)的时候常用的损失函数是采用交叉熵损失函数 </p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 532806389@qq.com </span>
@@ -450,7 +464,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Jia">Jia</a></p>
     <p><span class="copy-title">发布时间:</span>2019-09-30, 16:48:02</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-20, 13:57:12</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-20, 14:48:47</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/30/熵/" title="熵">https://532806389.github.io/2019/09/30/熵/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
